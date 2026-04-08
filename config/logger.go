@@ -14,6 +14,10 @@ type Logger struct {
 	write   io.Writer
 }
 
+func (l *Logger) InfoF(format string, v ...interface{}) {
+	l.info.Printf(format, v...)
+}
+
 // Create New Logger
 func NewLogger(p string) *Logger {
 	writer := io.Writer(os.Stdout)
